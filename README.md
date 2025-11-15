@@ -1,42 +1,54 @@
-# jahyl-client
+# Frontend – Jahyl
 
-This template should help get you started developing with Vue 3 in Vite.
+E-commerce local com entregas programadas
 
-## Recommended IDE Setup
+O Jahyl Store Frontend é a interface web de uma plataforma de vendas voltada para um comércio local, permitindo que clientes da região façam pedidos online e recebam suas compras por meio de rotas de entrega programadas.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+![page1](https://i.imgur.com/gGznzVY.png)
 
-## Recommended Browser Setup
+## 🚀 Propósito do Projeto
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+Digitalizar o comércio local oferecendo uma solução simples e eficiente para compras online com entregas rápidas.
+Os pedidos são agrupados em rotas de entrega que saem em horários específicos — apenas pedidos feitos dentro do prazo participam da rota.
+A entrega é limitada às redondezas da loja, garantindo agilidade e custo baixo.
 
-## Type Support for `.vue` Imports in TS
+![page2](https://i.imgur.com/3RRyoeo.png)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## 📦 Como funciona a entrega
 
-## Customize configuration
+A loja define um horário de saída da rota de entrega (ex.: 17h40).
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Todos os pedidos feitos até esse horário entram na rota atual.
 
-## Project Setup
+Após o horário limite, os pedidos passam para a próxima rota.
 
-```sh
-npm install
-```
+Somente são aceitos pedidos de endereços dentro da área local definida.
 
-### Compile and Hot-Reload for Development
+O sistema exibe para o cliente o tempo restante até a próxima rota.
 
-```sh
-npm run dev
-```
+![rota](https://i.imgur.com/N5fmeXI.png)
 
-### Type-Check, Compile and Minify for Production
+## 🛍️ Principais Funcionalidades
 
-```sh
-npm run build
-```
+Catálogo de produtos por categorias
+
+Detalhes completos do produto
+
+Carrinho de compras persistente
+
+Cálculo automático de subtotal
+
+Exibição do horário limite da próxima entrega
+
+Interface leve, responsiva e focada em usabilidade
+
+## 🧰 Tecnologias Utilizadas
+
+Vue 3 (Composition API)
+
+TailwindCSS
+
+## 📌 Status do Projeto
+
+Em desenvolvimento ativo.
+Novas funcionalidades relacionadas a pedidos, rotas e integração com backend serão incluídas gradualmente.
