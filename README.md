@@ -1,10 +1,10 @@
-# Frontend – Jahyl
+# Frontend – Dolce Aroma
 
 E-commerce local com entregas programadas
 
-O Jahyl Store Frontend é a interface web de uma plataforma de vendas voltada para um comércio local, permitindo que clientes da região façam pedidos online e recebam suas compras por meio de rotas de entrega programadas.
+O Dolce Aroma Frontend é a interface web de uma plataforma de vendas voltada para um comércio local, permitindo que clientes da região façam pedidos online e recebam suas compras por meio de rotas de entrega programadas.
 
-![page1](https://i.imgur.com/gGznzVY.png)
+![page1](https://i.imgur.com/8F7P4PQ.png)
 
 ## 🚀 Propósito do Projeto
 
@@ -12,7 +12,7 @@ Digitalizar o comércio local oferecendo uma solução simples e eficiente para 
 Os pedidos são agrupados em rotas de entrega que saem em horários específicos — apenas pedidos feitos dentro do prazo participam da rota.
 A entrega é limitada às redondezas da loja, garantindo agilidade e custo baixo.
 
-![page2](https://i.imgur.com/3RRyoeo.png)
+![page2](https://i.imgur.com/rHkUygN.png)
 
 ## 📦 Como funciona a entrega
 
@@ -44,7 +44,7 @@ Interface leve, responsiva e focada em usabilidade
 
 ## 🧰 Tecnologias Utilizadas
 
-Vue 3 (Composition API)
+Vue 3
 
 TailwindCSS
 

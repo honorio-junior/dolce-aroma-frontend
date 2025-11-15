@@ -1,12 +1,12 @@
 <template>
-    <h1 class="text-xl font-medium px-2 text-center mt-5">Cardapio</h1>
+    <h1 class="text-2xl font-medium px-2 text-center mt-5 text-primary">Cardapio</h1>
     <main class="px-2">
         <section v-for="item in cardapio" class="mb-3">
-            <div class="border-b border-zinc-200 py-4 mb-2">
+            <div class="border-b border-yellow-400 py-4 mb-2">
                 <span class="font-medium">{{ item.nomeCategoria }}</span>
             </div>
             <div
-                class="border border-zinc-200 p-1 rounded bg-zinc-100 flex justify-between items-center flex-wrap mb-3"
+                class="border border-yellow-400 p-1 rounded bg-white/50 flex justify-between items-center flex-wrap mb-3"
                 v-for="produto in item.produtos"
             >
                 <div class="px-3 font-medium">
@@ -17,7 +17,7 @@
                     <img
                         :src="produto.urlImg"
                         alt="produto"
-                        class="w-[100px] h-[100px] object-cover rounded-4xl"
+                        class="w-[100px] h-[100px] object-cover rounded-2xl border border-yellow-400"
                         loading="lazy"
                     />
                     <div v-if="produto.entrega" class="absolute top-0 right-0">

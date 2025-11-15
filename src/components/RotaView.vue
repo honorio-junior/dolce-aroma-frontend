@@ -1,21 +1,21 @@
 <template>
     <!-- info -->
     <p class="text-center px-2 mb-2 font-semibold">
-        <span class="text-zinc-800 font-medium">Horario da proxima entrega:</span>
+        <span class="text-zinc-700 font-normal">Horario da proxima entrega:</span>
         <br />
         <span class="text-zinc-800 font-semibold"
             >{{ formatMinutosHora(rota.partida) }} <br />
-            <span class="text-sm font-medium text-purple-600"
+            <span class="text-xs font-normal text-zinc-600"
                 >(Compras ate {{ formatMinutosHora(rota.limiteCompra) }})</span
             ></span
         >
     </p>
     <!-- rota -->
     <div class="relative px-3 mb-1">
-        <div class="w-full bg-gray-200 rounded-full h-5 mb-2 relative">
+        <div class="w-full bg-white rounded-full h-5 mb-2 relative">
             <!-- barra interna -->
             <div
-                class="h-5 rounded-full transition-all duration-500 flex items-center bg-linear-to-r from-yellow-400 via-warning to-yellow-400 bg-size-[200%_100%]"
+                class="h-5 rounded-full transition-all duration-500 flex items-center bg-linear-to-r from-indigo-400 via-green-600 bg-size-[200%_100%]"
                 style="min-width: 8%"
                 :style="{ width: porcRota + '%' }"
             >
@@ -24,7 +24,7 @@
 
             <!-- marcador -->
             <span
-                class="absolute top-1/2 -translate-y-1/2 text-purple-500"
+                class="absolute top-[10.5px] -translate-y-1/2 text-zinc-600"
                 :style="{ left: porcRotaLimite + '%' }"
                 >|</span
             >
@@ -41,7 +41,7 @@
             <p class="text-sm text-gray-600 text-right">Partida</p>
         </div>
     </div>
-    <div class="underline text-blue-500 font-semibold text-center mb-4 text-sm cursor-default">
+    <div class="underline text-blue-400 font-normal text-center mb-4 text-xs cursor-default">
         <span class="cursor-pointer"> Saiba mais </span>
     </div>
 </template>

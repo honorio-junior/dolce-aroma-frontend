@@ -1,9 +1,9 @@
 <template>
     <!-- footer -->
-    <footer class="bg-blue-100 mt-5 p-2">
-        <div class="flex gap-5 justify-center items-center mt-3">
+    <footer class="bg-yellow-200 mt-5 pt-2 border-t border-yellow-400">
+        <div class="flex gap-5 justify-center items-center">
             <!-- whatsapp -->
-            <span class="rounded-full p-2 bg-black/20"
+            <span @click="whatsapp()" class="rounded-full p-2 bg-black/40 cursor-pointer"
                 ><svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -17,7 +17,7 @@
                     /></svg
             ></span>
             <!-- instagram -->
-            <span class="rounded-full p-2 bg-black/20"
+            <span @click="instagram()" class="rounded-full p-2 bg-black/40 cursor-pointer"
                 ><svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -31,10 +31,29 @@
                     /></svg
             ></span>
         </div>
-        <p class="text-center text-black/50 mt-3">© JAHYL</p>
+        <p class="text-center text-black/80">© DOLCE AROMA</p>
+        <p class="text-center text-xs bg-zinc-100 text-zinc-400 font-normal">
+            Desenvolvido por
+            <a
+                target="_blank"
+                class="underline text-blue-400"
+                href="https://www.linkedin.com/in/honoriojunior/"
+                >Honorio Junior</a
+            >
+        </p>
     </footer>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+function whatsapp() {
+    const texto = encodeURIComponent('Olá! Quero fazer um pedido:');
+    const numero = '5592991588743';
+    window.open(`https://wa.me/${numero}?text=${texto}`, '_blank');
+}
+
+function instagram() {
+    window.open('https://www.instagram.com/cafeteria_dolcearoma/', '_blank');
+}
+</script>
 
 <style scoped></style>

@@ -1,15 +1,17 @@
 <template>
     <!-- info -->
     <p class="text-center px-2 mb-2 font-semibold text-primary">
-        Loja virtual JAHYL
+        <span class="text-2xl">Dolce Aroma</span>
         <br />
-        Compre online e receba na sua casa!
+        <span class="text-zinc-700 text-xs font-normal"> Cafeteria e Lanchonete </span>
+        <br />
+        <span class="font-normal"> Compre online e receba na sua casa! </span>
         <br />
     </p>
     <!-- rota -->
-    <RotaView></RotaView>
+    <!-- <RotaView></RotaView> -->
     <!-- banner -->
-    <p class="text-center text-xl font-bold text-success">Destaques</p>
+    <!-- <p class="text-center text-xl text-zinc-800/50">Destaques</p> -->
     <div class="mx-2 mb-3">
         <div class="p-1 rounded-2xl max-w-max mx-auto bg-primary">
             <div class="relative w-full max-w-lg mx-auto overflow-hidden rounded-2xl">
@@ -19,7 +21,7 @@
                         v-for="p in destaques"
                         :src="p.urlImg"
                         :key="p.idProduto"
-                        class="w-full shrink-0 max-h-60 object-cover"
+                        class="w-full shrink-0 max-h-40 object-cover"
                         alt="produto"
                     />
                 </div>
@@ -43,7 +45,7 @@
     <!-- search -->
     <form class="flex justify-center gap-2 px-2 mt-8 mb-2">
         <input
-            class="flex-1 border border-zinc-300 rounded-full px-3 outline-0"
+            class="flex-1 border border-yellow-700 bg-yellow-200 rounded-full px-3 outline-0"
             type="text"
             placeholder="Digite o nome do produto"
         />
@@ -156,7 +158,7 @@ function bannerDestaques() {
     next?.addEventListener('click', () => showSlide(index + 1));
     prev?.addEventListener('click', () => showSlide(index - 1));
 
-    setInterval(() => showSlide(index + 1), 5000);
+    setInterval(() => showSlide(index + 1), 3000);
 }
 </script>
 

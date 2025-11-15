@@ -1,7 +1,7 @@
 <template>
     <div class="flex">
         <!-- card -->
-        <div class="min-w-40 bg-white border border-zinc-300 shadow rounded-lg p-2 flex flex-col">
+        <div class="min-w-40 bg-white/50 border border-yellow-400 shadow rounded-lg p-2 flex flex-col">
             <div class="relative">
                 <img
                     :src="urlImg"

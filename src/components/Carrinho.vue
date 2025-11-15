@@ -6,9 +6,9 @@
             class="fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-end z-50"
         >
             <div class="bg-white w-full h-full m-1 p-4 overflow-y-auto shadow-xl">
-                <h1 class="text-center font-semibold">Meu carrinho</h1>
-                <h2 class="font-medium border-b border-zinc-300">Items</h2>
-                <div class="max-h-80 overflow-auto">
+                <h1 class="text-center text-zinc-500">Meu carrinho</h1>
+                <h2 class="border-b border-zinc-300">Itens</h2>
+                <div class="max-h-60 overflow-auto">
                     <!-- item do carrinho -->
                     <span class="text-sm text-zinc-500" v-if="cart.items.length == 0"
                         >Nenhum produto adicionado.</span
@@ -21,68 +21,29 @@
                             <img
                                 :src="item.urlImg"
                                 alt="produto"
-                                class="w-[50px] h-[50px] object-cover rounded p-1 border border-zinc-300"
+                                class="w-[50px] h-[50px] object-cover rounded border border-zinc-800"
                                 loading="lazy"
                             />
                         </div>
                         <div class="flex-1">
-                            <h3 class="font-semibold text-xs">{{ item.nomeProduto }}</h3>
-                            <span class="text-sm font-medium">R$ {{ item.valorProduto }}</span>
+                            <h3 class="text-xs">{{ item.nomeProduto }}</h3>
+                            <span class="text-xs">R$ {{ item.valorProduto }}</span>
                         </div>
                         <div class="flex items-center justify-center flex-col">
-                            <span class="text-sm font-medium">{{ item.quantidade }}</span>
-                            <div class="text-white font-medium flex gap-2">
+                            <span class="text-sm">{{ item.quantidade }}</span>
+                            <div class="text-white flex gap-2">
                                 <button
                                     @click="adicionarItem(item.idProduto)"
                                     class="bg-warning p-1 cursor-pointer rounded h-5 w-5 flex items-center justify-center"
                                 >
-                                    <span>
-                                        <!-- SVG plus -->
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-plus-circle"
-                                            viewBox="0 0 16 16"
-                                        >
-                                            <path
-                                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8
-                 8 0 1 0 8 0a8 8 0 0 0 0 16"
-                                            />
-                                            <path
-                                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5
-                 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5
-                 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
-                                            />
-                                        </svg>
-                                    </span>
+                                    <span> + </span>
                                 </button>
 
                                 <button
                                     @click="removerItem(item.idProduto)"
                                     class="bg-warning p-1 cursor-pointer rounded h-5 w-5 flex items-center justify-center"
                                 >
-                                    <span>
-                                        <!-- SVG dash -->
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="bi bi-dash-circle"
-                                            viewBox="0 0 16 16"
-                                        >
-                                            <path
-                                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8
-                 8 0 1 0 8 0a8 8 0 0 0 0 16"
-                                            />
-                                            <path
-                                                d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 
-                 0 0 1 0 1h-7A.5.5 0 0 1 4 8"
-                                            />
-                                        </svg>
-                                    </span>
+                                    <span class="mb-0.5"> - </span>
                                 </button>
                             </div>
                         </div>
@@ -90,27 +51,30 @@
                 </div>
                 <template v-if="cart.items.length > 0">
                     <!-- Resumo -->
-                    <h2 class="font-medium border-b border-zinc-300 mt-3">Resumo</h2>
+                    <h2 class="border-b border-zinc-300 mt-3">Resumo</h2>
                     <div class="mt-1">
                         <!-- subtotal -->
                         <div class="flex justify-between items-center">
-                            <span class="text-zinc-500 font-medium text-sm">Subtotal</span>
-                            <span>R$ {{ subtotal }}</span>
+                            <span class="text-zinc-600 text-xs">Subtotal</span>
+                            <span class="text-sm text-zinc-700">R$ {{ subtotal }}</span>
                         </div>
                         <!-- taxa entrega -->
                         <div class="flex justify-between items-center mt-1">
-                            <span class="text-zinc-500 font-medium text-sm">Taxa de entrega</span>
-                            <span class="text-sm">R$ {{ entrega }}</span>
+                            <span class="text-zinc-600 text-xs">Taxa de entrega</span>
+                            <span class="text-xs text-zinc-700">R$ {{ entrega }}</span>
                         </div>
                         <!-- total -->
                         <div class="flex justify-between items-center mt-1">
-                            <span class="text-zinc-700 font-medium">Total</span>
-                            <span class="font-medium">R$ {{ total }}</span>
+                            <span class="text-zinc-700 font-normal">Total</span>
+                            <span class="text-sm">R$ {{ total }}</span>
                         </div>
                     </div>
                     <!-- Pagar -->
-                    <button @click="gerarPix()" class="mt-2 bg-primary text-white rounded w-full py-2 cursor-pointer">
-                        Gerar Pix
+                    <button
+                        @click="gerarMensagemWhatsApp()"
+                        class="mt-2 bg-primary text-white rounded w-full py-2 cursor-pointer"
+                    >
+                        Fazer pedido
                     </button>
                 </template>
             </div>
@@ -120,7 +84,7 @@
     <!-- BOTÃO FLUTUANTE -->
     <button
         @click="abrirCarrinho()"
-        class="bg-primary/90 rounded-full cursor-pointer p-4 fixed bottom-3 right-3 z-50"
+        class="bg-primary/70 rounded-full cursor-pointer p-4 fixed bottom-3 right-3 z-50"
     >
         <svg
             v-if="!openModal"
@@ -193,7 +157,7 @@ function adicionarItem(idProduto: number) {
     const produto = cart.items.find(i => i.idProduto == idProduto);
 
     if (produto) {
-        if (produto.quantidade < 10) {
+        if (produto.quantidade < 200) {
             produto.quantidade += 1;
         }
     }
@@ -212,9 +176,22 @@ function removerItem(idProduto: number) {
     calcular();
 }
 
-function gerarPix() {
-    
+function gerarMensagemWhatsApp() {
+  let mensagem = "Olá! Quero fazer um pedido:\n\n";
+
+  cart.items.forEach(item => {
+    mensagem += `• ${item.nomeProduto} — ${item.quantidade}\n`;
+  });
+
+//   mensagem += "\nObrigado! 😊";
+
+  const texto = encodeURIComponent(mensagem);
+  const numero = "5592991588743";
+
+  window.open(`https://wa.me/${numero}?text=${texto}`, "_blank");
 }
+
+function gerarPix() {}
 </script>
 
 <style scoped>

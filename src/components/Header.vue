@@ -1,9 +1,9 @@
 <template>
     <!-- header -->
-    <header class="flex justify-between items-center border-b border-zinc-200" :class="open == false ? 'mb-4' : ''">
+    <header class="flex justify-between items-center border-b border-yellow-400" :class="open == false ? 'mb-4' : ''">
         <div class="flex items-center">
-            <img src="/img/icon.svg" alt="logo" width="80" />
-            <h1 class="font-semibold text-xl">JAHYL</h1>
+            <img src="/img/logo.jpg" alt="logo" width="70" />
+            <!-- <h1 class="font-semibold text-lg text-primary">Dolce Aroma</h1> -->
         </div>
         <div class="mr-2 cursor-pointer" @click="open = !open">
             <span
@@ -13,7 +13,7 @@
                     width="30"
                     height="30"
                     fill="currentColor"
-                    class="bi bi-list transition-transform"
+                    class="bi bi-list transition-transform text-primary"
                     viewBox="0 0 16 16"
                 >
                     <path
@@ -23,10 +23,9 @@
             ></span>
         </div>
     </header>
-    <div v-if="open" class="bg-zinc-100 p-4 min-h-20 mb-4 text-center font-medium flex flex-col gap-3 text-lg text-black/80 border-b border-zinc-200">
+    <div v-if="open" class="bg-yellow-200 p-4 min-h-20 mb-4 text-center font-medium flex flex-col gap-3 text text-black/80 border-b border-yellow-400">
     <span @click="open = false" :class="route.path == '/' ? 'underline' : ''"><router-link to="/">Inicio</router-link></span>
     <span @click="open = false" :class="route.path == '/cardapio' ? 'underline' : ''"><router-link to="/cardapio">Cardapio</router-link></span>
-    <span @click="open = false" :class="route.path == '/meus-pedidos' ? 'underline' : ''"><router-link to="/meus-pedidos">Meus pedidos</router-link></span>
     </div>
 </template>
 

@@ -18,4 +18,10 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  server: {
+    allowedHosts: [
+      '814ec87bcbc1.ngrok-free.app'
+    ],
+    host: true,   // permite acesso externo
+  },
 })
