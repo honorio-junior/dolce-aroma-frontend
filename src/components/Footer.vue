@@ -45,14 +45,24 @@
 </template>
 
 <script setup lang="ts">
-function whatsapp() {
+import { getContatos } from '@/services/indexService';
+import { onMounted, ref } from 'vue';
+
+const contatos = ref({whatsapp: '', instagram: ''});
+
+onMounted(async () => {
+    contatos.value = await getContatos();
+})
+
+async function whatsapp() {
     const texto = encodeURIComponent('Olá! Quero fazer um pedido:');
-    const numero = '5592991588743';
+    const numero = contatos.value.whatsapp;
     window.open(`https://wa.me/${numero}?text=${texto}`, '_blank');
 }
 
 function instagram() {
-    window.open('https://www.instagram.com/cafeteria_dolcearoma/', '_blank');
+    const instagram = contatos.value.instagram;
+    window.open('https://www.instagram.com/' + instagram, '_blank');
 }
 </script>
 

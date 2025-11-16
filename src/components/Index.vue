@@ -45,11 +45,13 @@
     <!-- search -->
     <form class="flex justify-center gap-2 px-2 mt-8 mb-2">
         <input
+            required
+            disabled
             class="flex-1 border border-yellow-700 bg-yellow-200 rounded-full px-3 outline-0"
             type="text"
             placeholder="Digite o nome do produto"
         />
-        <button class="bg-primary rounded-full p-3 cursor-pointer" type="submit">
+        <button disabled class="bg-primary rounded-full p-3 cursor-pointer disabled:cursor-default" type="submit">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="15"

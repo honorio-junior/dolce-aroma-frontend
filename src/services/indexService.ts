@@ -23,3 +23,8 @@ export const getEntrega = async () => {
     const result = await axios.get('/api/taxa-entrega');
     return result.data;
 };
+
+export const getContatos = async () => {
+    const result = await axios.get('/api/contatos');
+    return result.data;
+};

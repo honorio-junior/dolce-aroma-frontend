@@ -121,15 +121,21 @@
 </template>
 
 <script setup lang="ts">
-import { getEntrega } from '@/services/indexService';
+import { getContatos, getEntrega } from '@/services/indexService';
 import { useCartStore } from '@/stores/cartStore';
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
 const cart = useCartStore();
 const openModal = ref(false);
 const subtotal = ref('0');
 const entrega = ref('0');
 const total = ref('0');
+
+const contatos = ref({whatsapp: '', instagram: ''});
+
+onMounted(async () => {
+    contatos.value = await getContatos();
+})
 
 async function abrirCarrinho() {
     openModal.value = !openModal.value;
@@ -186,7 +192,7 @@ function gerarMensagemWhatsApp() {
 //   mensagem += "\nObrigado! 😊";
 
   const texto = encodeURIComponent(mensagem);
-  const numero = "5592991588743";
+  const numero = contatos.value.whatsapp;
 
   window.open(`https://wa.me/${numero}?text=${texto}`, "_blank");
 }
