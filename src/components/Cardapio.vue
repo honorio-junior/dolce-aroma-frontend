@@ -20,14 +20,14 @@
                         class="w-[65px] h-[65px] object-cover rounded-2xl border border-yellow-400"
                         loading="lazy"
                     />
-                </div>
-                <div v-if="produto.entrega" class="absolute top-0 right-0 opacity-90">
-                    <AdicionarProduto
-                        :idProduto="produto.idProduto"
-                        :nomeProduto="produto.nomeProduto"
-                        :urlImg="produto.urlImg"
-                        :valorProduto="produto.valorProduto"
-                    ></AdicionarProduto>
+                    <div v-if="produto.entrega" class="absolute top-0 right-0 opacity-90">
+                        <AdicionarProduto
+                            :idProduto="produto.idProduto"
+                            :nomeProduto="produto.nomeProduto"
+                            :urlImg="produto.urlImg"
+                            :valorProduto="produto.valorProduto"
+                        ></AdicionarProduto>
+                    </div>
                 </div>
             </div>
         </section>

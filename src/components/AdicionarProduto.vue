@@ -19,8 +19,8 @@
     <Transition>
         <div
             v-if="popup"
-            class="h-15 fixed top-0 left-0 right-0 text-center flex items-center justify-center text-white font-semibold z-999"
-            :class="exist == false ? 'bg-success/90' : 'bg-red-500/90'"
+            class="h-15 fixed top-0 left-0 right-0 text-center flex items-center justify-center text-white z-999"
+            :class="exist == false ? 'bg-success/95' : 'bg-red-500/95'"
         >
             {{ info }}
         </div>

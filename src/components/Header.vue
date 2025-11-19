@@ -4,7 +4,7 @@
         class="flex justify-between items-center border-b border-yellow-400"
         :class="open == false ? 'mb-4' : ''"
     >
-        <div class="flex items-center">
+        <div class="flex items-center" @click="open = false">
             <router-link to="/">
                 <img src="/img/logo.jpg" alt="logo" width="70" />
             </router-link>
