@@ -1,8 +1,13 @@
 <template>
     <!-- header -->
-    <header class="flex justify-between items-center border-b border-yellow-400" :class="open == false ? 'mb-4' : ''">
+    <header
+        class="flex justify-between items-center border-b border-yellow-400"
+        :class="open == false ? 'mb-4' : ''"
+    >
         <div class="flex items-center">
-            <img src="/img/logo.jpg" alt="logo" width="70" />
+            <router-link to="/">
+                <img src="/img/logo.jpg" alt="logo" width="70" />
+            </router-link>
             <!-- <h1 class="font-semibold text-lg text-primary">Dolce Aroma</h1> -->
         </div>
         <div class="mr-2 cursor-pointer" @click="open = !open">
@@ -23,17 +28,24 @@
             ></span>
         </div>
     </header>
-    <div v-if="open" class="bg-yellow-200 p-4 min-h-20 mb-4 text-center font-medium flex flex-col gap-3 text text-black/80 border-b border-yellow-400">
-    <span @click="open = false" :class="route.path == '/' ? 'underline' : ''"><router-link to="/">Inicio</router-link></span>
-    <span @click="open = false" :class="route.path == '/cardapio' ? 'underline' : ''"><router-link to="/cardapio">Cardapio</router-link></span>
+    <div
+        v-if="open"
+        class="bg-yellow-200 p-4 min-h-20 mb-4 text-center font-medium flex flex-col gap-3 text text-black/80 border-b border-yellow-400"
+    >
+        <span @click="open = false" :class="route.path == '/' ? 'underline' : ''"
+            ><router-link to="/">Inicio</router-link></span
+        >
+        <span @click="open = false" :class="route.path == '/cardapio' ? 'underline' : ''"
+            ><router-link to="/cardapio">Cardapio</router-link></span
+        >
     </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useRoute } from 'vue-router'
+import { useRoute } from 'vue-router';
 
-const route = useRoute()
+const route = useRoute();
 
 const open = ref(false);
 </script>

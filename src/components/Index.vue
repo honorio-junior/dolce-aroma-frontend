@@ -1,13 +1,10 @@
 <template>
     <!-- info -->
-    <p class="text-center px-2 mb-2 font-semibold text-primary">
-        <span class="text-2xl">Dolce Aroma</span>
-        <br />
-        <span class="text-zinc-700 text-xs font-normal"> Cafeteria e Lanchonete </span>
-        <br />
-        <span class="font-normal"> Compre online e receba na sua casa! </span>
-        <br />
-    </p>
+    <header class="text-center px-2 mb-2 font-semibold text-primary">
+        <h1 class="text-2xl">Dolce Aroma</h1>
+        <h2 class="text-zinc-700 text-xs font-normal"> Cafeteria e Lanchonete </h2>
+        <h3 class="font-normal"> Compre online e receba na sua casa! </h3>
+    </header>
     <!-- rota -->
     <!-- <RotaView></RotaView> -->
     <!-- banner -->
@@ -70,7 +67,7 @@
     <div v-for="c in cardapio" :key="c.idCategoria" class="p-2">
         <!-- categoria -->
         <div class="flex justify-between items-center mb-4">
-            <span class="font-medium text-lg">{{ c.nomeCategoria }}</span>
+            <h2 class="font-medium text-lg">{{ c.nomeCategoria }}</h2>
             <!-- <button class="font-medium underline text-warning cursor-pointer">Ver mais</button> -->
             <router-link class="text-warning font-medium underline cursor-pointer" to="/cardapio"
                 >Ver mais</router-link

@@ -1,10 +1,10 @@
 <template>
-    <h1 class="text-2xl font-medium px-2 text-center mt-5 text-primary">Cardapio</h1>
+    <h2 class="text-2xl font-medium px-2 text-center mt-5 text-primary">Cardapio</h2>
     <main class="px-2">
         <section v-for="item in cardapio" class="mb-3">
-            <div class="border-b border-yellow-400 py-4 mb-2">
+            <h3 class="border-b border-yellow-400 py-1 mb-2">
                 <span class="font-medium">{{ item.nomeCategoria }}</span>
-            </div>
+            </h3>
             <div
                 class="border border-yellow-400 p-1 rounded bg-white/50 flex justify-between items-center flex-wrap mb-3"
                 v-for="produto in item.produtos"
