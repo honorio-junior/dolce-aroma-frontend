@@ -6,28 +6,28 @@
                 <span class="font-medium">{{ item.nomeCategoria }}</span>
             </h3>
             <div
-                class="border border-yellow-400 p-1 rounded bg-white/50 flex justify-between items-center flex-wrap mb-3"
+                class="border relative border-yellow-400 p-1 rounded bg-white/50 flex justify-between items-center flex-wrap mb-3"
                 v-for="produto in item.produtos"
             >
-                <div class="px-3 font-medium">
+                <div class="px-3">
                     <h3>{{ produto.nomeProduto }}</h3>
-                    <span class="font-normal">R$ {{ produto.valorProduto }}</span>
+                    <span class="text-sm text-stone-700">R$ {{ produto.valorProduto }}</span>
                 </div>
                 <div class="relative">
                     <img
                         :src="produto.urlImg"
                         alt="produto"
-                        class="w-[100px] h-[100px] object-cover rounded-2xl border border-yellow-400"
+                        class="w-[65px] h-[65px] object-cover rounded-2xl border border-yellow-400"
                         loading="lazy"
                     />
-                    <div v-if="produto.entrega" class="absolute top-0 right-0">
-                        <AdicionarProduto
-                            :idProduto="produto.idProduto"
-                            :nomeProduto="produto.nomeProduto"
-                            :urlImg="produto.urlImg"
-                            :valorProduto="produto.valorProduto"
-                        ></AdicionarProduto>
-                    </div>
+                </div>
+                <div v-if="produto.entrega" class="absolute top-0 right-0 opacity-90">
+                    <AdicionarProduto
+                        :idProduto="produto.idProduto"
+                        :nomeProduto="produto.nomeProduto"
+                        :urlImg="produto.urlImg"
+                        :valorProduto="produto.valorProduto"
+                    ></AdicionarProduto>
                 </div>
             </div>
         </section>
