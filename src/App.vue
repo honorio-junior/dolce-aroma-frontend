@@ -2,7 +2,7 @@
     <Header></Header>
     <router-view></router-view>
     <Footer></Footer>
-    <Carrinho></Carrinho>
+    <!-- <Carrinho></Carrinho> -->
 </template>
 
 <script setup lang="ts">

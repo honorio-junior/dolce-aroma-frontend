@@ -14,6 +14,26 @@ export const getCardapio = async () => {
     return result.data;
 };
 
+export const getCardapioBar = async () => {
+    const result = await axios.get('/api/cardapio-bar');
+    return result.data;
+};
+
+export const getCardapioFeirinha = async () => {
+    const result = await axios.get('/api/cardapio-feirinha');
+    return result.data;
+};
+
+export const getCardapioComercio = async () => {
+    const result = await axios.get('/api/cardapio-comercio');
+    return result.data;
+};
+
+export const getCardapioCafeteria = async () => {
+    const result = await axios.get('/api/cardapio-cafeteria');
+    return result.data;
+};
+
 export const getRota = async () => {
     const result = await axios.get('/api/rota');
     return result.data;

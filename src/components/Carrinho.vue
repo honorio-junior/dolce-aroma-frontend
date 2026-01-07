@@ -84,7 +84,7 @@
     <!-- BOTÃO FLUTUANTE -->
     <button
         @click="abrirCarrinho()"
-        class="bg-primary/70 rounded-full cursor-pointer p-4 fixed bottom-3 right-3 z-50"
+        class="bg-orange-600/80 rounded-full cursor-pointer p-4 fixed bottom-3 right-3 z-50"
     >
         <svg
             v-if="!openModal"
