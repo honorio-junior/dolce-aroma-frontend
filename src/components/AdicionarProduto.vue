@@ -1,7 +1,7 @@
 <template>
     <button
         @click="adicionarProdutoCarrinho(idProduto)"
-        class="bg-primary rounded-full cursor-pointer p-2"
+        class="bg-orange-600 rounded-full cursor-pointer p-2"
     >
         <svg
             xmlns="http://www.w3.org/2000/svg"
