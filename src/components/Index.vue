@@ -1,7 +1,9 @@
 <template>
     <!-- info -->
     <header class="text-center px-2 mb-2 font-semibold text-white">
-        <h3 class="text-2xl mb-4" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">Tudo oque você precisa, mais perto de você!!</h3>
+        <h3 class="text-2xl mb-4" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6)">
+            Tudo oque você precisa, mais perto de você!!
+        </h3>
         <h4 class="text-sm bg-white/20 rounded-full py-2">Praticidade, conforto e conveniência</h4>
     </header>
     <!-- rota -->
@@ -151,6 +153,27 @@
                 </div>
             </li>
         </ul>
+    </div>
+    <!-- sobre -->
+    <div class="mt-3">
+        <span class="m-2 text-white">Quem somos?</span>
+        <br /><br />
+        <p class="m-2 mt-0 text-white text-center">
+            O Jardim Europa Mall nasceu com um propósito simples: estar perto de quem vive ao nosso
+            redor. Localizados à beira da estrada, entendemos a importância de oferecer praticidade,
+            acesso fácil e soluções rápidas para o dia a dia da comunidade local.
+            <br /><br />Trabalhamos com bar, hotel, feirinha, comércio, cafeteria e restaurante,
+            reunindo em um só espaço diferentes serviços pensados para atender moradores, viajantes
+            e toda a região com conforto, qualidade e conveniência. Mais do que um centro comercial,
+            somos um ponto de encontro, apoio e conexão para a comunidade local. <br /><br />
+            O Jardim Europa Mall também mantém parceria com a piscicultura JAHYL, referência na
+            produção de peixes frescos e de qualidade. A JAHYL trabalha majoritariamente com
+            matrinxãs pescados na hora, garantindo frescor e procedência, e em breve ampliará sua
+            produção com a venda de tambaquis. <br /><br />
+            Estamos localizados na Estrada da Várzea – AM 363, KM 37, um ponto estratégico para
+            facilitar o acesso e aproximar ainda mais você do que precisa. <br /><br />
+            No Jardim Europa Mall, conveniência, cuidado e comunidade caminham juntos.
+        </p>
     </div>
 </template>
 
