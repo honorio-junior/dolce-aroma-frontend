@@ -10,7 +10,7 @@
                 v-for="produto in item.produtos"
             >
                 <div class="px-3">
-                    <h3>{{ produto.nomeProduto }}</h3>
+                    <h3 class="truncate w-40">{{ produto.nomeProduto }}</h3>
                     <span class="text-sm text-stone-700">R$ {{ produto.valorProduto }}</span>
                 </div>
                 <div class="relative">
