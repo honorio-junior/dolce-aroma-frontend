@@ -1,10 +1,6 @@
-import Bar from '@/components/Bar.vue';
-import Cardapio from '@/components/Cardapio.vue';
+import Catalogo from '@/components/Catalogo.vue';
 import Index from '@/components/Index.vue';
-import Feirinha from '@/components/Feirinha.vue';
-import Comercio from '@/components/Comercio.vue';
 import { createRouter, createWebHistory } from 'vue-router';
-import Cafeteria from '@/components/Cafeteria.vue';
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,10 +15,30 @@ const router = createRouter({
     },
     routes: [
         { path: '/', component: Index, name: 'index' },
-        { path: '/bar', component: Bar, name: 'bar' },
-        { path: '/feirinha', component: Feirinha, name: 'feirinha' },
-        { path: '/comercio', component: Comercio, name: 'comercio' },
-        { path: '/cafeteria-restaurante', component: Cafeteria, name: 'cafeteria-restaurante' },
+        {
+            path: '/bar',
+            name: 'bar',
+            component: Catalogo,
+            props: { categoria: 'Bar', service: 'getCardapioBar' },
+        },
+        {
+            path: '/feirinha',
+            name: 'feirinha',
+            component: Catalogo,
+            props: { categoria: 'Feirinha', service: 'getCardapioFeirinha' },
+        },
+        {
+            path: '/comercio',
+            name: 'comercio',
+            component: Catalogo,
+            props: { categoria: 'Comércio', service: 'getCardapioComercio' },
+        },
+        {
+            path: '/cafeteria-restaurante',
+            name: 'cafeteria-restaurante',
+            component: Catalogo,
+            props: { categoria: 'Cafeteria e Restaurante', service: 'getCardapioCafeteria' },
+        },
     ],
 });
 

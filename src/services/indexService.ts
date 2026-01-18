@@ -9,10 +9,23 @@ export const getCardapioResumo = async () => {
     const result = await axios.get('/api/cardapio-resumo');
     return result.data;
 };
-export const getCardapio = async () => {
-    const result = await axios.get('/api/cardapio');
+
+export const getRota = async () => {
+    const result = await axios.get('/api/rota');
     return result.data;
 };
+
+export const getEntrega = async () => {
+    const result = await axios.get('/api/taxa-entrega');
+    return result.data;
+};
+
+export const getContatos = async () => {
+    const result = await axios.get('/api/contatos');
+    return result.data;
+};
+
+// setores
 
 export const getCardapioBar = async () => {
     const result = await axios.get('/api/cardapio-bar');
@@ -31,20 +44,5 @@ export const getCardapioComercio = async () => {
 
 export const getCardapioCafeteria = async () => {
     const result = await axios.get('/api/cardapio-cafeteria');
-    return result.data;
-};
-
-export const getRota = async () => {
-    const result = await axios.get('/api/rota');
-    return result.data;
-};
-
-export const getEntrega = async () => {
-    const result = await axios.get('/api/taxa-entrega');
-    return result.data;
-};
-
-export const getContatos = async () => {
-    const result = await axios.get('/api/contatos');
     return result.data;
 };
