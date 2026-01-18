@@ -49,11 +49,15 @@ import * as services from '../services/indexService';
 import AdicionarProduto from './AdicionarProduto.vue';
 import Carrinho from './Carrinho.vue';
 
-const props = defineProps({
-    categoria: String,
-    service: String, // nome da função enviada pela rota
-});
+// Tipando props de forma segura
+type ServiceName = keyof typeof services;
 
+const props = defineProps<{
+    categoria: string;
+    service: ServiceName; // agora o TS sabe que só pode ser uma função do services
+}>();
+
+// Cardápio inicial
 const cardapio = ref<
     {
         idCategoria: number;
@@ -66,31 +70,22 @@ const cardapio = ref<
             entrega: boolean;
         }[];
     }[]
->([
-    {
-        idCategoria: 0,
-        nomeCategoria: '',
-        produtos: [
-            {
-                idProduto: 0,
-                nomeProduto: '',
-                valorProduto: '0,00',
-                urlImg: '',
-                entrega: false,
-            },
-        ],
-    },
-]);
+>([]);
 
+// 3️⃣ Função para carregar produtos
 onMounted(async () => {
-    const func = services[props.service];
+    const func = services[props.service]; // pega a função do módulo
 
     if (!func) {
         console.error(`Service "${props.service}" não encontrado!`);
         return;
     }
 
-    cardapio.value = await func();
+    try {
+        cardapio.value = await func();
+    } catch (error) {
+        console.error('Erro ao carregar cardápio:', error);
+    }
 });
 </script>
 
